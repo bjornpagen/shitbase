@@ -1,7 +1,6 @@
 //cat.c
 
 #include <stdio.h>
-#include <err.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -18,7 +17,7 @@ int main(int argc, char** argv) {
 	} else {
 		// print the file at argv[1]
 		char* filename = argv[1];
-		long size;
+		int64_t size;
 		char c;
 
 		FILE* rfp = fopen(filename, "rb");
@@ -26,7 +25,7 @@ int main(int argc, char** argv) {
 		size = ftell(rfp);
 		fseek(rfp, 0, SEEK_SET);
 
-		for(int n = 0; n < size; n++) {
+		for(int64_t n = 0; n < size; n++) {
 			c = fgetc(rfp);
 			fputc(c, stdout);
 		}
