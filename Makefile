@@ -1,6 +1,6 @@
 # shitbase makefile
 
-SUBDIRS = cat echo
+SUBDIRS = cat echo sleep
 
 all:
 	@for i in ${SUBDIRS}; do cd $$i; ${MAKE} || exit; cd ..; done
