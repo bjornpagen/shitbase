@@ -1,0 +1,3 @@
+# echo makefile
+
+PROG = echo
